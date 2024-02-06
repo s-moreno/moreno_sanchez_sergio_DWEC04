@@ -15,6 +15,7 @@ A su vez muestra la localización de cada país en openStreetMap.
 
 ## Recursos utilizados
 
++ [REST Countries](https://restcountries.com/) - RESTful API con información de países.
 + [JavaScript](https://www.javascript.com/)
 + [jQuery](https://jquery.com/) - Librería JavaScript.
 + [osmToGeoJson](https://tyrasd.github.io/osmtogeojson/) - Convierte datos de OSM (OpenStreetMaps) a GeoJSON.
