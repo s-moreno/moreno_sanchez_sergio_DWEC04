@@ -1,0 +1,135 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+header {
+  background-image: url("../images/earth.png") !important;
+  background-position: bottom;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card {
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.card-footer > .badge:hover {
+  color: black !important;
+  text-decoration: underline;
+}
+
+#btn-go-top {
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  visibility: hidden;
+}
+
+#pais:hover {
+  cursor: pointer;
+  background-color: #d1e7dd;
+}
+
+.flag-icon {
+  height: 16px;
+  width: 24px;
+}
+
+#breadcrumb-ol > li {
+  cursor: pointer;
+}
+
+#breadcrumb-ol > li:last-child {
+  cursor: default;
+}
+
+.papel {
+  margin: 1em;
+  background-color: #fef1c3;
+  background: linear-gradient(#fef1c3 98%, #e0b8b8 98%);
+  background-size: 100% 40px;
+  padding: 1em;
+  border-radius: 10px;
+}
+.papel h1 {
+  color: darkred !important;
+  font-weight: 400;
+}
+
+.papel ul {
+  font-family: "Indie Flower", cursive;
+  list-style: none;
+}
+.lista,
+.isla li {
+  font-size: x-large;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.clave {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: green;
+}
+
+.lista > li:before {
+  content: "\2713";
+  color: green;
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+.isla > li::before {
+  content: "\2717";
+  color: darkred;
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+.lista > li li {
+  padding-left: 20px;
+}
+
+.lista > li li:before {
+  content: "\276D";
+  color: blue;
+  padding-left: 20px;
+  margin-right: 0.5em;
+}
+
+.subrayado {
+  font-style: italic;
+  text-decoration: underline 2px;
+  text-decoration-color: darkred;
+}
+
+#mapa {
+  border: 4px grey solid;
+}
+
+.enlace:hover {
+  cursor: pointer;
+  color: darkred;
+}
+
+.enlace:hover::after {
+  content: "\2717";
+  color: darkred;
+  margin-left: 0.5em;
+}
+
+.fondo {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 8px 15px 10px 15px;
+  border-radius: 5px;
+  border: 1px solid darkblue;
+}

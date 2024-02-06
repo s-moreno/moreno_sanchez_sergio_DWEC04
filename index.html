@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Países del mundo</title>
+  <link rel="shortcut icon" href="images/worldmap.png" type="image/x-icon">
+
+  <!-- LLAMADA A LOS ESTILOS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- LLAMADA A SCRIPTS -->
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/osmtogeojson.js"></script>
+  <script src="js/leaflet.js"></script>
+  <script type="module" src="js/funciones.js"></script>
+  <script type="module" src="js/eventosDOM.js"></script>
+
+</head>
+
+<body>
+
+  <header class="container bg-dark" data-bs-theme="dark">
+    <div class="px-4 py-5 text-center text-white ">
+      <!-- Título -->
+      <div class="d-flex flex-row justify-content-center ">
+        <img class="align-middle mx-3" src="images/worldmap.png" alt="" height="60">
+        <h1 class="display-5 fw-bold align-middle"><a href="index.html">Países del mundo</a></h1>
+      </div>
+      <!-- Resumen -->
+      <div class="col-lg-7 mx-auto mt-4">
+        <p id="resumen" class="lead"></p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar BREADCRUMB -->
+  <div class="container mb-3 ">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <!-- BreadCrumb -->
+        <nav id="breadcrumb" style="--bs-breadcrumb-divider: '>';">
+          <ol id="breadcrumb-ol" class="breadcrumb">
+            <li id="breadcrumb-world" class="breadcrumb-item"><span class="link-body-emphasis"><i
+                  class="bi bi-globe-americas"></i></span></li>
+          </ol>
+        </nav>
+      </div>
+      <div class="col-12 col-md-6 p-0">
+        <!-- BreaCrumb Filtro Derecha -->
+        <nav id="breadcrumb-filter" class="navbar p-0">
+          <div class="container justify-content-end">
+            <button id="poblacion" type="button" class="btn btn-sm btn-outline-primary me-2"><i
+                class="bi bi-people-fill"></i> Habitantes</button>
+            <button id="extension" type="button" class="btn btn-sm btn-outline-primary me-2"><i
+                class="bi bi-arrows-fullscreen"></i> Extensión</button>
+            <div class="btn-group">
+              <button id="A-Z" type="button" class="btn btn-sm btn-outline-primary disabled"><i
+                  class="bi bi-arrow-down"></i></button>
+              <button id="Z-A" type="button" class="btn btn-sm btn-outline-primary"><i
+                  class="bi bi-arrow-up"></i></button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main id="lienzo" class="container"></main>
+
+  <!-- Footer -->
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0 text-body-secondary">© 2024 Sergio Moreno - <a class="link-secondary" href="mailto:smoreno@birt.eus">smoreno@birt.eus</a></p>
+  
+      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <img class="bi me-2" width="32" height="32" src="images/worldmap.png">
+      </a>
+  
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Inicio</a></li>
+        <li class="nav-item"><a href="https://github.com/s-moreno" target="_blank" class="nav-link px-2 text-body-secondary">Github</a></li>
+        <li class="nav-item"><a href="https://www.birt.eus/" target="_blank" class="nav-link px-2 text-body-secondary">Birt.eus</a></li>
+      </ul>
+    </footer>
+  </div>
+
+  <!-- BOTÓN ARRIBA -->
+  <button id="btn-go-top" type="button" class="btn btn-primary btn-lg rounded-pill">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+</body>
+
+</html>
