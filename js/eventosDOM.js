@@ -296,6 +296,7 @@ $(document).ready(function () {
       
       // pintamos los países que coinciden con la búsqueda
       borrarBreadCrumb();
+      $("#info-actual").empty();
       pintarPaises(listaPaisesAux);
       eventoClickPaisCard();
       scrollTo(0, 0); // ir al top de la ventana;
