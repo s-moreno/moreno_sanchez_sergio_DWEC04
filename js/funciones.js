@@ -344,7 +344,7 @@ export function pintarResumenActual(zona, listaPaises) {
   else zonaNombre = traduccion(listaPaises[0].subregion);
   
   const $resumen = $(`
-    <span class="fondo fw-bolder font-monospace"><span class="">${zonaNombre}:</span> <span class="badge rounded-pill text-bg-info">${listaPaises.length}</span> países. <span class="badge rounded-pill text-bg-info">${poblacionTotal(listaPaises).toLocaleString()}</span> de habitantes.</span>
+    <span class="fondo fw-bolder font-monospace"><span class="">${zonaNombre}:</span> <span class="badge rounded-pill text-bg-warning">${listaPaises.length}</span> países. <span class="badge rounded-pill text-bg-warning">${poblacionTotal(listaPaises).toLocaleString()}</span> de habitantes.</span>
   `);
   
   $("#info-actual").empty()
