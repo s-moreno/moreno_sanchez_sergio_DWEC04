@@ -52,11 +52,13 @@
       </div>
       <div class="col-12 col-md-6 p-0">
         <!-- BreaCrumb Filtro Derecha -->
-        <nav id="breadcrumb-filter" class="navbar p-0">
+        <nav id="breadcrumb-filter" class="navbar p-0 flex-nowrap">
           <div class="container justify-content-end">
-            <button id="poblacion" type="button" class="btn btn-sm btn-outline-primary me-2"><i
+            <button id="grilla" type="button" class="btn btn-sm btn-outline-primary me-2 text-nowrap disabled"><i
+              class="bi bi-grid-3x3-gap-fill"></i> Cuadrícula</button>
+            <button id="poblacion" type="button" class="btn btn-sm btn-outline-primary me-2 text-nowrap"><i
                 class="bi bi-people-fill"></i> Habitantes</button>
-            <button id="extension" type="button" class="btn btn-sm btn-outline-primary me-2"><i
+            <button id="extension" type="button" class="btn btn-sm btn-outline-primary me-2 text-nowrap"><i
                 class="bi bi-arrows-fullscreen"></i> Extensión</button>
             <div class="btn-group">
               <button id="A-Z" type="button" class="btn btn-sm btn-outline-primary disabled"><i
@@ -78,9 +80,9 @@
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
       <p class="col-md-4 mb-0 text-body-secondary">© 2024 Sergio Moreno - <a class="link-secondary" href="mailto:smoreno@birt.eus">smoreno@birt.eus</a></p>
   
-      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <img class="bi me-2" width="32" height="32" src="images/worldmap.png">
-      </a>
+      <p class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <img class="bi me-2" width="32" height="32" src="images/worldmap.png" alt="Países del mundo" title="Países del mundo">
+      </p>
   
       <ul class="nav col-md-4 justify-content-end">
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Inicio</a></li>

@@ -4,7 +4,7 @@
  * Función que recibe un nombre de región o subregión
  * y devuelve un string con su traducción
  * @param {string} nombre - El nombre de una región o subregión
- * @returns 
+ * @returns {string} - La traducción
  */
 export function traduccion(nombre) {
 
@@ -32,7 +32,7 @@ export function traduccion(nombre) {
  * Función que dada una subregión, devuelve el nombre de la región
  * a la que pertenece
  * @param {string} nombreSubregion - Una subregión
- * @returns 
+ * @returns {string} - Región
  */
 export function buscarRegion(nombreSubregion) {
   for (let region of regiones) {
@@ -42,6 +42,17 @@ export function buscarRegion(nombreSubregion) {
       return region.name;
     }
   }
+}
+
+/**
+ * Función que dada una región, devuelve un array con la relación
+ * de sus subregiones
+ * @param {string} nombreRegion - Una región 
+ * @returns {string[]} - Array con las subregiones
+ */
+export function buscarSubregiones(nombreRegion) {
+  const regionEncontrada = regiones.find(region => region.name === nombreRegion);
+  return regionEncontrada.subregions.map( subregion => subregion.name);
 }
 
 /**

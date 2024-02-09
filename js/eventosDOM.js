@@ -45,6 +45,7 @@ $(document).ready(function () {
         pintarPaises(listaPaises);
         eventoClickBreadCrumb();
         eventoClickPaisCard();
+        eventoBuscador();
         scrollTo(0, 0);
       })
       .catch((error) => {
@@ -64,6 +65,7 @@ $(document).ready(function () {
       vistaExtension = false;
       vistaPoblacion = false;
       $("#poblacion, #extension, #Z-A").removeClass("disabled");
+      $("#grilla").addClass("disabled");
     });
 
     // Click en el continente
@@ -104,11 +106,22 @@ $(document).ready(function () {
       }
     });
 
-    // Click en botón lista por población/habitantes
+    // Click en botón VISTA mostrar países en cuadrícula/grilla
+    $("#grilla").click(() => { 
+      pintarPaises(listaPaisesAux);
+      eventoClickPaisCard();
+      scrollTo(0, 0); // ir al top de la ventana;
+      vistaExtension = false;
+      vistaPoblacion = false;
+      $("#poblacion, #extension, #Z-A").removeClass("disabled");
+      $("#grilla").addClass("disabled");
+    });
+
+    // Click en botón VISTA lista por población/habitantes
     $("#poblacion").click(() => {
       vistaPoblacion = true;
       $("#poblacion, #A-Z").addClass("disabled");
-      $("#extension, #Z-A").removeClass("disabled");
+      $("#grilla, #extension, #Z-A").removeClass("disabled");
       if (listaPaisesAux.length === 0) {
         ordenarListaPoblacion(listaPaises);
         pintarListaPoblacion(listaPaises);
@@ -119,11 +132,11 @@ $(document).ready(function () {
       eventoClickPaisCard();
     });
 
-    // Click en botón lista por extensión/superficie
+    // Click en botón VISTA lista por extensión/superficie
     $("#extension").click(() => {
       vistaExtension = true;
       $("#extension, #A-Z").addClass("disabled");
-      $("#poblacion, #Z-A").removeClass("disabled");
+      $("#grilla, #poblacion, #Z-A").removeClass("disabled");
       if (listaPaisesAux.length === 0) {
         ordenarLista(listaPaises, "area", false);
         pintarListaExtension(listaPaises);
@@ -195,7 +208,6 @@ $(document).ready(function () {
           pintarResumenActual("region", listaPaisesAux);
           pintarBreadCrumb(undefined, region);
           pintarPaises(listaPaisesAux);
-
         } else if (id === "region") {
           const subregion = $(this).data("name");
           listaPaisesAux = listaPaises.filter(
@@ -210,13 +222,12 @@ $(document).ready(function () {
         eventoClickBreadCrumb();
         eventoClickPaisCard();
         scrollTo(0, 0); // ir al top de la ventana;
-
       } else {
         const pais = $(this).data("name");
         pintarPais(pais, listaPaises);
         eventoClickPais();
         eventoClickBreadCrumb();
-        $("#extension, #poblacion, #A-Z, #Z-A").addClass("disabled");
+        $("#grilla, #extension, #poblacion, #A-Z, #Z-A").addClass("disabled");
         $("#info-actual").empty();
         scrollTo(0, 0); // ir al top de la ventana;
       }
@@ -273,6 +284,34 @@ $(document).ready(function () {
   }
 
   /**
+   * función que controla los eventos al buscar un páis en el formulario
+   */
+  function eventoBuscador() {
+    let texto = "";
+
+    // creamos un string con el texto introducido por el usuario
+    $("#buscador").keyup(function (event) {
+      texto = $(this).val().toLowerCase(); // convertir a minúsculas
+      listaPaisesAux = listaPaises.filter((pais) => pais.translations.spa.common.toLowerCase().includes(texto));
+      
+      // pintamos los países que coinciden con la búsqueda
+      borrarBreadCrumb();
+      pintarPaises(listaPaisesAux);
+      eventoClickPaisCard();
+      scrollTo(0, 0); // ir al top de la ventana;
+      vistaPoblacion = false;
+      vistaExtension = false;
+      $("#poblacion, #extension, #Z-A").removeClass("disabled");
+    });
+
+    // al perder el foco del input, borrar el texto
+    $("#buscador").blur(function() { 
+      $(this).val("");
+      texto = "";
+    });
+  }
+
+  /**
    * Función que muestra un botón para ir al inicio de la ventana
    */
   function botonIrTop() {
@@ -289,6 +328,6 @@ $(document).ready(function () {
       }
     };
     // Lógica del evento click del boton para subir arriba
-    $topButton.click(() => scrollTo(0,0));
+    $topButton.click(() => scrollTo(0, 0));
   }
 }); //fin jquery
