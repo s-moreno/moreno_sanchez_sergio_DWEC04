@@ -295,19 +295,34 @@ $(document).ready(function () {
       listaPaisesAux = listaPaises.filter((pais) => pais.translations.spa.common.toLowerCase().includes(texto));
       
       // pintamos los países que coinciden con la búsqueda
-      borrarBreadCrumb();
+      if (listaPaisesAux.length === 0) { //mensaje de que no hay coincidencias
+        $("main").empty().append(`
+          <div class="alert alert-primary" role="alert">
+            <h4 class="alert-heading display-6">Sin coincidencias</h4>
+            <p class="lead">Intenta ajustar la búsqueda para encontrar el país deseado.</p>
+          </div>
+        `);
+      } else {
+        pintarPaises(listaPaisesAux);
+        eventoClickPaisCard();
+      }
       $("#info-actual").empty();
-      pintarPaises(listaPaisesAux);
-      eventoClickPaisCard();
-      scrollTo(0, 0); // ir al top de la ventana;
+      borrarBreadCrumb();
       vistaPoblacion = false;
       vistaExtension = false;
       $("#poblacion, #extension, #Z-A").removeClass("disabled");
     });
 
-    // al perder el foco del input, borrar el texto
+    // al recibir el foco el input
+    $("#buscador").focus(function () { 
+      $(this).attr("placeholder", "");
+      
+    });
+    // al perder el foco del input
     $("#buscador").blur(function() { 
+      $(this).attr("placeholder", "Buscar País");
       $(this).val("");
+      if (listaPaisesAux.length === 0) iniciarPaises();
       texto = "";
     });
   }

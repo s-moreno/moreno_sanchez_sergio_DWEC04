@@ -83,7 +83,7 @@ export const $navBarHome = $(`
       <div id="info-actual" class="p-3 lead"></div>
       <div class="d-flex justify-content-end">
         <form class="d-flex" role="search">
-          <input id="buscador" class="form-control me-2" type="search" placeholder="Buscar País">
+          <input id="buscador" class="form-control me-2" placeholder="Buscar País">
         </form>
         <button class="btn btn-outline-light me-2" id="btn-inicio" type="button"><i class="bi bi-house-fill"></i></button>
       </div>
