@@ -51,6 +51,10 @@ a {
   cursor: default;
 }
 
+#breadcrumb-ol > li:last-child:only-child {
+  cursor: pointer;
+}
+
 .papel {
   margin: 1em;
   background-color: #fef1c3;
