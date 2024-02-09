@@ -12,7 +12,7 @@ export const $paisCardTemplate = $(`
         </div>
         <div class="card-footer">
             <span id="continente" class="badge rounded-pill"></span>
-            <span id="region" class="badge rounded-pill text-bg-light"
+            <span id="region" class="badge rounded-pill text-bg-light"</span>
         </div>
         </article>
     </div>  
