@@ -37,7 +37,7 @@ $(document).ready(function () {
     obtenerPaisesAPI("/all")
       .then((data) => {
         listaPaises = data;
-        listaPaisesAux = [];
+        listaPaisesAux = listaPaises;
       })
       .then(() => {
         ordenarLista(listaPaises);
