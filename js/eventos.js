@@ -108,6 +108,7 @@ $(document).ready(function () {
 
     // Click en botón VISTA mostrar países en cuadrícula/grilla
     $("#grilla").click(() => { 
+      ordenarLista(listaPaisesAux);
       pintarPaises(listaPaisesAux);
       eventoClickPaisCard();
       scrollTo(0, 0); // ir al top de la ventana;
