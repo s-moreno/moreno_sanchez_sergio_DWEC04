@@ -3,7 +3,8 @@
 // URL para consumir la API
 const urlApi = "https://restcountries.com/v3.1";
 // Obtener solo datos que necesitamos de la API
-const datos = "fields=cca3,area,borders,capital,capitalInfo,currencies,independent,flags,languages,latlng,maps,name,population,region,subregion,translations";
+// const datos = "fields=cca3,area,borders,capital,capitalInfo,currencies,independent,flags,languages,latlng,maps,name,population,region,subregion,translations";
+const datos = "fields=cca3,capital,currencies,flags,languages,latlng,name,population,region,subregion,translations";
 
 /**
  * Función que consume la API y devuelve los datos obtenidos.
