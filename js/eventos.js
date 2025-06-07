@@ -25,6 +25,7 @@ $(document).ready(function () {
   let vistaExtension = false;
 
   // MAIN
+  alert("Recientemente una limitación de uso de la API, ha motivado que la aplicación deje de funcionar.");
   pintarNavbarHome();
   botonIrTop();
   iniciarPaises();
